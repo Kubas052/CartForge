@@ -1,9 +1,9 @@
 from django.db import models
-from apps.accounts.models import User
+from apps.accounts.models import UserProfile
 from apps.catalog.models import Product
 
 class Cart(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
+    user = models.OneToOneField(UserProfile, on_delete=models.CASCADE, null=True, blank=True)
     session_key = models.CharField(max_length=40, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 

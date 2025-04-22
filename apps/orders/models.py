@@ -1,5 +1,5 @@
 from django.db import models
-from apps.accounts.models import User, Address
+from apps.accounts.models import UserProfile, Address
 from apps.catalog.models import Product
 
 
@@ -12,7 +12,7 @@ class Order(models.Model):
         ('cancelled', 'Cancelled'),
     ]
 
-    user = models.ForeignKey(User, on_delete=models.PROTECT)
+    user = models.ForeignKey(UserProfile, on_delete=models.PROTECT)
     order_number = models.CharField(max_length=20, unique=True)
     shipping_address = models.ForeignKey(Address, on_delete=models.PROTECT)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='new')
