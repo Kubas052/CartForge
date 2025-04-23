@@ -1,4 +1,4 @@
-# 🛒 E-commerce Project
+# 🛒 CartForge 
 
 **Project Status: In Development 🚧**
 
